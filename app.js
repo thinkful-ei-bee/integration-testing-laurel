@@ -41,4 +41,4 @@ app.get('/apps', (req, res) => {
     res.send(results);
 });
 
-module.export = app;
+module.exports = app;
