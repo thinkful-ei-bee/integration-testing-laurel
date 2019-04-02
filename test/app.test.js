@@ -20,4 +20,20 @@ describe('Playstore app', () => {
 });
 
 
+describe('wrong searches', () => {
+    it('should return a 400 when given a wrong search keyword', () => {
+        return request(app)
+            .get('/apps')
+            .query({ sorting: 'Nope!' })
+            .expect(400)
+    })
+
+    it('should return a 400 when given a wrong genre', () => {
+        return request(app)
+            .get('/apps')
+            .query({ genre: 'Try again!' })
+            .expect(400)
+    })
+})
+
 
